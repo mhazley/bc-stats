@@ -1,5 +1,3 @@
-from typing import List
-
 class Player:
 
     def __init__(self, name: str, number: str):
@@ -27,18 +25,23 @@ class Team:
         for player in self.players:
             print(player.number, player.name)
 
+class Score:
 
-class Jam:
-
-    def __init__(self, blockers: List[Player], jammer: Player):
-        self.blockers = blockers
-        self.jammer = jammer
+    def __init__(self):
+        self.blockers = []
+        self.jammer = None
         self.points = 0
         self.lost = False
         self.lead = False
         self.call = False
         self.inj = False
         self.ni = False
+
+class Jam:
+
+    def __init__(self, home_score: Score, away_score: Score ):
+        self.home_score = home_score
+        self.away_score = away_score
 
 
 class Game:
